@@ -1,0 +1,57 @@
+﻿# A Superscript Extension for Markdown
+
+This extension adds the ability to add superscripts to Markdown documents.
+
+
+## Usage
+
+To superscript something, place a carrot symbol, '^', before and after the
+text that you would like in superscript:  6.02 x 10^23^
+The '23' in this example will be superscripted.  See below.
+
+Examples:
+
+    >>> import markdown
+    >>> md = markdown.Markdown(extensions=['superscript'])
+    >>> md.convert('This is a reference to a footnote^1^.')
+    u'<p>This is a reference to a footnote<sup>1</sup>.</p>'
+    
+    >>> md.convert('This is scientific notation: 6.02 x 10^23^')
+    u'<p>This is scientific notation: 6.02 x 10<sup>23</sup></p>'
+    
+    >>> md.convert('This is scientific notation: 6.02 x 10^23. Note lack of second carrot.')
+    u'<p>This is scientific notation: 6.02 x 10^23. Note lack of second carrot.</p>'
+    
+    >>> md.convert('Scientific notation: 6.02 x 10^23. Add carrot at end of sentence.^')
+    u'<p>Scientific notation: 6.02 x 10<sup>23. Add a carrot at the end of sentence.</sup>.</p>'
+
+Paragraph breaks will nullify superscripts across paragraphs. Line breaks
+within paragraphs will not.
+
+Drop superscript.py into your /site-packages/markdown/extensions/ directory.
+
+
+## Calling from Command Line
+
+markdown.py FILENAME.md -x superscript --file=OUTPUTFILE.html
+
+Where:
+
+* FILENAME.md = valid Markdown file to convert
+
+* '-x superscript' calls the extension
+
+* OUTPUTFILE.html = the resulting HTML conversion of the Markdown file
+
+
+## Script Information
+
+Author: [Shane Graber][1]
+
+Repository: [http://github.com/sgraber/markdown.superscript][2]
+
+Date: 2010-07-29
+
+
+[1]: sgraber-at-gmail-dot-com
+[2]: http://github.com/sgraber/markdown.superscript
