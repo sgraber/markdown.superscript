@@ -1,6 +1,6 @@
 """Superscipt extension for Markdown.
 
-To superscript something, place a carrot symbol, '^', before and after the
+To superscript something, place a carat symbol, '^', before and after the
 text that you would like in superscript:  6.02 x 10^23^
 The '23' in this example will be superscripted.  See below.
 
@@ -14,11 +14,11 @@ u'<p>This is a reference to a footnote<sup>1</sup>.</p>'
 >>> md.convert('This is scientific notation: 6.02 x 10^23^')
 u'<p>This is scientific notation: 6.02 x 10<sup>23</sup></p>'
 
->>> md.convert('This is scientific notation: 6.02 x 10^23. Note lack of second carrot.')
-u'<p>This is scientific notation: 6.02 x 10^23. Note lack of second carrot.</p>'
+>>> md.convert('This is scientific notation: 6.02 x 10^23. Note lack of second carat.')
+u'<p>This is scientific notation: 6.02 x 10^23. Note lack of second carat.</p>'
 
->>> md.convert('Scientific notation: 6.02 x 10^23. Add carrot at end of sentence.^')
-u'<p>Scientific notation: 6.02 x 10<sup>23. Add a carrot at the end of sentence.</sup>.</p>'
+>>> md.convert('Scientific notation: 6.02 x 10^23. Add carat at end of sentence.^')
+u'<p>Scientific notation: 6.02 x 10<sup>23. Add a carat at the end of sentence.</sup>.</p>'
 
 Paragraph breaks will nullify superscripts across paragraphs. Line breaks
 within paragraphs will not.
